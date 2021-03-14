@@ -25,7 +25,6 @@ class EditNicknameActivity : BaseActivity() {
 
             finish()
         }
-
     }
 
     override fun setValues() {

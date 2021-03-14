@@ -1,11 +1,14 @@
 package kr.co.tjoeun.pizzaorderapp_20210314.fragments
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_edit_nickname.*
+import kotlinx.android.synthetic.main.fragment_my_profile.*
 import kr.co.tjoeun.pizzaorderapp_20210314.EditNicknameActivity
 import kr.co.tjoeun.pizzaorderapp_20210314.R
 
@@ -28,6 +31,19 @@ class MyProfileFragment : Fragment() {
             val myIntent = Intent(activity, EditNicknameActivity::class.java)
 
             startActivityForResult(myIntent, REQUEST_FOR_NICKNAME)
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if(requestCode == REQUEST_FOR_NICKNAME) {
+            if (resultCode == Activity.RESULT_OK) {
+                val newNickname = data?.getStringExtra("nick")
+
+                nicknameTxt.text = newNickname
+
+            }
         }
     }
 }
