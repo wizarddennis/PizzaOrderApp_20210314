@@ -8,7 +8,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="파자 가게 모록 자리"
+        android:text="파자 가게 목록 자리"
         android:textSize="20sp"/>
 
 </LinearLayout>
